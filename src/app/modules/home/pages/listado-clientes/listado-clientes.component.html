@@ -1,0 +1,64 @@
+<div class="body">
+    <div class="card mb-2">
+        <div class="card-header">
+            Clientes
+        </div>
+        <div class="card-body text-primary">
+            <h5 class="card-title"> Listado de clientes</h5>
+
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>nombre</th>
+                        <th>apellido</th>
+                        <th>createAt</th>
+                        <th>email</th>
+                        <th>acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cliente of clientes">
+                        <td>{{cliente.id}}</td>
+                        <td>{{cliente.nombre}}</td>
+                        <td>{{cliente.apellido}}</td>
+                        <td>{{cliente.createAt}}</td>
+                        <td>{{cliente.email}}</td>
+                        <td><a (click)="mostrarModal(cliente)"><i class="lapiz fa-solid fa-pen-to-square"></i></a>
+                            <a (click)="eliminarCliente(cliente.id)"><i class="basura fa-solid fa-trash"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<div class="modalito" *ngIf="mostrar">
+    <div class="modal_container">
+        <img src="" alt="" class="modal_img">
+        <h2 class="modal_title">Editar Usuario</h2>
+        <form autocomplete="off" class="formulario" [formGroup]="formularioActualizar">
+            <label>Nombre</label>
+            <input class="inputsito" type="text" placeholder="holii" formControlName="nombre">
+            <label>Apellido</label>
+            <input class="inputsito" type="text" placeholder="holii" formControlName="apellido">
+            <label>Email</label>
+            <input class="inputsito email" type="text" placeholder="holii" formControlName="email">
+        </form>
+        <div class="botones">
+            <div class="botonEliminar">
+                <button (click)="eliminarCliente()" class=" botoncito botonGris"><i class="fa-solid fa-trash"></i>
+                    Eliminar</button>
+            </div>
+            <div class="botonesDerecha">
+                <button class="botoncito  botonGris" (click)="this.mostrar = false">Cancelar</button>
+                <button class="botoncito" (click)="actualizarCliente()">Actualizar</button>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
