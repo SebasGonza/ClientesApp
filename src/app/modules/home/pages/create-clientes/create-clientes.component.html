@@ -1,7 +1,26 @@
 <div class="fondo">
     <div class="cont-form">
         <div class="info-per">
-
+            <h3 class="tituloPer">
+                Let's get in touch
+            </h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi hic sunt est rerum, nesciunt nulla.
+                Aliquid, rem incidunt ipsam perferendis neque perspiciatis eius ullam quibusdam debitis eos odit aperiam
+                voluptas?</p>
+            <div class="info">
+                <div class="information">
+                    <a><i class="fas fa-map-marked-alt"></i></a>
+                    <p></p>
+                </div>
+                <div class="information">
+                    <span><i class="fa-solid fa-map-location-dot"></i></span>
+                    <p></p>
+                </div>
+                <div class="information">
+                    <img src="" alt="">
+                    <p></p>
+                </div>
+            </div>
         </div>
         <div class="form-per">
             <span class="circulo one"></span>
@@ -10,15 +29,15 @@
             <form autocomplete="off" class="formulario">
                 <h3 class="titulo">Registrar Cliente</h3>
                 <div class="input-container">
-                    <input class="inputsito" type="text" placeholder="holii" formControlName="nombre">
+                    <input class="inputsito" type="text" (click)="focusfunct" formControlName="nombre">
                     <label>Nombre</label>
                 </div>
                 <div class="input-container">
-                    <input class="inputsito" type="text" placeholder="holii" formControlName="apellido">
+                    <input class="inputsito" type="text" (click)="focusfunct" formControlName="apellido">
                     <label>Apellido</label>
                 </div>
                 <div class="input-container">
-                    <input class="inputsito email" type="email" placeholder="holii" formControlName="email">
+                    <input class="inputsito email" type="email" (click)="focusfunct" formControlName="email">
                     <label>Email</label>
                 </div>
                 <input type="submit" value="Send" class="btn">
