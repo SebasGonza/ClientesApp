@@ -42,5 +42,19 @@ export class ClienteService {
     );
 
   }
+  createCliente(cliente: Cliente): Observable<ClienteResponse> {
+    const url = this.baseUrl + '/clientes/';
+    return this.http.post<ClienteResponse>(url, cliente).pipe(
+      catchError(e => {
+        console.error(e);
+        Swal.fire({
+          title: 'Error al editar', text: e.error.errores ? e.error.errores : e.error.mensaje, icon: 'error',
+        }
+        )
+        return throwError(() => e);
+      })
+    );
+  }
+
 
 }

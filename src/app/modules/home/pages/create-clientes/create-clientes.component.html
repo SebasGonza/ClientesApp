@@ -9,7 +9,6 @@
                 voluptas?</p>
             <div class="info">
                 <div class="information">
-                    <a><i class="fas fa-map-marked-alt"></i></a>
                     <p></p>
                 </div>
                 <div class="information">
@@ -26,19 +25,20 @@
             <span class="circulo one"></span>
             <span class="circulo two"></span>
 
-            <form autocomplete="off" class="formulario">
+            <form autocomplete="off" class="formulario" [formGroup]="formularioCrear">
                 <h3 class="titulo">Registrar Cliente</h3>
                 <div class="input-container">
-                    <input class="inputsito" type="text" (click)="focusfunct" formControlName="nombre">
-                    <label>Nombre</label>
+                    <input class="inputsito" type="text" formControlName="nombre" placeholder=" ">
+                    <label class="labelsito">Nombre</label>
+                </div>
+
+                <div class="input-container">
+                    <input class="inputsito" type="text" formControlName="apellido" placeholder=" ">
+                    <label class="labelsito">Apellido</label>
                 </div>
                 <div class="input-container">
-                    <input class="inputsito" type="text" (click)="focusfunct" formControlName="apellido">
-                    <label>Apellido</label>
-                </div>
-                <div class="input-container">
-                    <input class="inputsito email" type="email" (click)="focusfunct" formControlName="email">
-                    <label>Email</label>
+                    <input class="inputsito" type="email" formControlName="email" placeholder=" ">
+                    <label class="labelsito">Email</label>
                 </div>
                 <input type="submit" value="Send" class="btn">
             </form>

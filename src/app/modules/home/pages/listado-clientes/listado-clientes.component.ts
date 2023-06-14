@@ -34,11 +34,6 @@ export class ListadoClientesComponent implements OnInit {
     );
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    console.log();
-    console.log(changes);
-  }
-
   mostrarModal(cliente: Cliente) {
     this.clienteSeleccionado = cliente;
     let formulario = this.formularioActualizar.controls;
@@ -53,9 +48,6 @@ export class ListadoClientesComponent implements OnInit {
   }
 
   actualizarCliente(): void {
-    let formulario = this.formularioActualizar.controls;
-
-    this.cliente = this.formularioActualizar.value;
 
     this.clienteService.editCliente(this.clienteSeleccionado!.id, this.cliente!).subscribe({
       next: ((data: ClienteResponse) => {

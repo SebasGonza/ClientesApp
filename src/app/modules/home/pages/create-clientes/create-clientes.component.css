@@ -110,6 +110,22 @@ label {
     color: #fff;
 }
 
+.btn {
+    padding: 0.6rem 1.3rem;
+    background-color: #fff;
+    border: 2px solid #fafafa;
+    border-radius: 25px;
+    line-height: 1;
+    outline: none;
+}
+
+
+.btn:hover {
+    background-color: transparent;
+    color: #fff;
+    transition: ease-out 0.6s;
+}
+
 .input-container label {
     position: absolute;
     top: 50%;
@@ -122,27 +138,34 @@ label {
     transition: 0.6s;
 }
 
-.btn{
-    padding: 0.6rem 1.3rem;
-    background-color: #fff;
-    border: 2px solid #fafafa;
-    border-radius: 25px;
-    line-height: 1;
-    outline: none;
-}
 
-.btn:hover{
-    background-color: transparent;
-    color: #fff;
-    transition: ease-out 0.6s;
-}
 
-.formulario input:focus ~label{
+.inputsito:focus~.labelsito,
+.inputsito:not(:placeholder-shown)~.labelsito {
     top: -4px;
     font-size: 12px;
-
+    /* background-color: #0088a9; */
 }
 
-.info-per{
-    
+
+
+
+.info-per {
+    padding: 2.3rem 2.2rem;
+    position: relative;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.element{
+    border: none;
+    outline: none;
 }
