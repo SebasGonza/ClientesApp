@@ -13,10 +13,11 @@ import Swal from 'sweetalert2';
 export class ListadoClientesComponent implements OnInit {
 
   formularioActualizar: FormGroup = this.fmbuilder.group({
-    nombre: [, Validators.required],
-    apellido: [, Validators.required],
+    nombre: [, Validators.required, Validators.minLength(6),],
+    apellido: [, Validators.required, Validators.minLength(6)],
     email: [, Validators.required]
-  })
+  },
+  )
 
   esError?: boolean;
   mensaje?: string;

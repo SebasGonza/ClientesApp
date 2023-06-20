@@ -1,12 +1,11 @@
 <div class="fondo">
     <div class="cont-form">
         <div class="info-per">
-            <h3 class="tituloPer">
-                Let's get in touch
-            </h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi hic sunt est rerum, nesciunt nulla.
-                Aliquid, rem incidunt ipsam perferendis neque perspiciatis eius ullam quibusdam debitis eos odit aperiam
-                voluptas?</p>
+            {{formularioCrear.get('nombre')!.errors| json}}
+            <br>
+            {{formularioCrear.get('apellido')!.errors| json}}
+            <br>
+            {{formularioCrear.get('email')!.errors| json}}
             <div class="info">
                 <div class="information">
                     <p></p>
@@ -30,17 +29,51 @@
                 <div class="input-container">
                     <input class="inputsito" type="text" formControlName="nombre" placeholder=" ">
                     <label class="labelsito">Nombre</label>
+                    <div *ngIf="formularioCrear.controls['nombre'].invalid && (formularioCrear.controls['nombre'].dirty || formularioCrear.controls['nombre'].touched)"
+                        class="alert">
+                        <div *ngIf="formularioCrear.controls['nombre'].errors?.['required']">
+                            Este campo es obligatorio*
+                        </div>
+                        <div *ngIf="formularioCrear.controls['nombre'].errors?.['alpha']">
+                            No se permiten numeros
+                        </div>
+                        <div *ngIf="formularioCrear.controls['nombre'].errors?.['minlength']">
+                            Minimo 4 caracteres
+                        </div>
+                    </div>
                 </div>
 
                 <div class="input-container">
                     <input class="inputsito" type="text" formControlName="apellido" placeholder=" ">
                     <label class="labelsito">Apellido</label>
+                    <div *ngIf="formularioCrear.controls['apellido'].invalid && (formularioCrear.controls['apellido'].dirty || formularioCrear.controls['apellido'].touched)"
+                        class="alert">
+                        <div *ngIf="formularioCrear.controls['apellido'].errors?.['required']">
+                            Este campo es obligatorio*
+                        </div>
+                        <div *ngIf="formularioCrear.controls['apellido'].errors?.['alpha']">
+                            No se permiten numeros
+                        </div>
+                        <div *ngIf="formularioCrear.controls['apellido'].errors?.['minlength']">
+                            Minimo 4 caracteres
+                        </div>
+                    </div>
                 </div>
                 <div class="input-container">
                     <input class="inputsito" type="email" formControlName="email" placeholder=" ">
                     <label class="labelsito">Email</label>
+                    <div *ngIf="formularioCrear.controls['email'].invalid && (formularioCrear.controls['email'].dirty || formularioCrear.controls['email'].touched)"
+                        class="alert">
+                        <div *ngIf="formularioCrear.controls['email'].errors?.['required']">
+                            Este campo es obligatorio*
+                        </div>
+                        <div *ngIf="formularioCrear.controls['email'].errors?.['email']">
+                            Escribe un correo valido
+                        </div>
+
+                    </div>
                 </div>
-                <input type="submit" value="Send" class="btn">
+                <input type="submit" value="Send" class="btn" (click)="validarCampo()">
             </form>
         </div>
     </div>

@@ -9,7 +9,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // Import modulos
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './modules/home/home.module';
-import { MaterialModule } from './modules/Material/material.module';
 
 
 @NgModule({

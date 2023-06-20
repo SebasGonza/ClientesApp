@@ -48,7 +48,7 @@ export class ClienteService {
       catchError(e => {
         console.error(e);
         Swal.fire({
-          title: 'Error al editar', text: e.error.errores ? e.error.errores : e.error.mensaje, icon: 'error',
+          title: 'Error al crear', text: e.error.errores ? e.error.errores : e.error.mensaje, icon: 'error',
         }
         )
         return throwError(() => e);
