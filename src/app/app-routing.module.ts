@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreateClientesComponent } from './modules/home/pages/create-clientes/create-clientes.component';
 import { ListadoClientesComponent } from './modules/home/pages/listado-clientes/listado-clientes.component';
+import { LoginComponent } from './modules/auth/pages/login/login.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: ListadoClientesComponent,
+    component: LoginComponent,
     pathMatch: 'full'
   },
   { path: 'crear', component: CreateClientesComponent },
